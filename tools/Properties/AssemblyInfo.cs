@@ -2,15 +2,14 @@
 
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Xunit;
 
 #endregion using directives
 
 // General Information about an assembly is controlled through the following set of attributes.
 // Change these attribute values to modify the information associated with an assembly.
-[assembly: AssemblyTitle("AvePoint Cloud Governance Samples SDK")]
-[assembly: AssemblyDescription("AvePoint Cloud Governance Samples SDK")]
-[assembly: AssemblyConfiguration("AvePoint Cloud Governance Samples SDK")]
+[assembly: AssemblyTitle("AvePoint Cloud Governance Samples Tools")]
+[assembly: AssemblyDescription("AvePoint Cloud Governance Samples Tools")]
+[assembly: AssemblyConfiguration("AvePoint Cloud Governance Samples Tools")]
 [assembly: AssemblyCompany("AvePoint, Inc.")]
 [assembly: AssemblyProduct("AvePoint Cloud Governance")]
 [assembly: AssemblyCopyright("Copyright ©AvePoint 2018")]
@@ -22,7 +21,7 @@ using Xunit;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("25858ce6-1e22-4988-aa76-975a53d07804")]
+[assembly: Guid("d98c234c-58fd-4b3d-8192-82bdd78a3119")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,4 +31,3 @@ using Xunit;
 // as shown below: [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyTrait("AvePoint", "Cloud.Governance.Samples.Sdk")]
