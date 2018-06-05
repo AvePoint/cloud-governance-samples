@@ -37,9 +37,8 @@
 
                 //Cloud Governance Client Sdk need a Region url and security token
                 //to callback the Cloud Governance web api.
-                GaoApi.Init(Region.EastUS, securityToken);
-
-                var requestService = GaoApi.Create<IRequestService>();
+                //New method is a instance level api, that means you get a clear object each time
+                var requestService = GaoApi.New<IRequestService>(Region.EastUS, securityToken);
 
                 //In Cloud Governance Client Sdk, everty request id link to one request type,
                 //In this case, the request is a ProvSite request.
