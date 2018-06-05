@@ -5,18 +5,23 @@
     using System;
     using System.ComponentModel;
     using System.Diagnostics;
+    using System.Net;
     using System.Web.Services;
+    using AvePoint.GA.WebAPI;
+    using AvePoint.GA.WebAPI.Models;
 
     #endregion using directives
 
     /// <summary>
-    /// Summary description for SiteCollectionWebService
+    /// A demo web service named SiteCollectionWebService to describe a customized service which can
+    /// be invoked by the Cloud Governance service cluster. As a matter of fact, the cloud governance
+    /// service cluster only consider the exception result as a Custom Action has a invalid result,
+    /// that means, if you want to let the cloud governance knows the invalid result, you should use
+    /// a exception message with non 2-serials http status code instead of return a status by the web method.
     /// </summary>
     [WebService(Namespace = "http://www.avepoint.com/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [ToolboxItem(false)]
-    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the
-    // following line. [System.Web.Script.Services.ScriptService]
     public class SiteCollectionWebService : WebService
     {
         [WebMethod]
@@ -27,23 +32,36 @@
             try
             {
                 Trace.TraceInformation(
-                    "Start to execute checking if site collection url is valid.requestId:{0}, securityToken:{1}",
-                    requestId, securityToken);
-                var info = CustomHttpHelper.GetSiteCollectionUrlInfo(securityToken, requestId);
-                var requestURL = (info.ManagedPath + info.Url).TrimStart('/');
-                Trace.TraceInformation("request url:{0}", requestURL);
-                var service = new BlockURLService();
-                var blockedURLs = service.GetBlockedURLs();
-                if (blockedURLs.Contains(requestURL.ToLower()))
+                    $"Start checking if site collection.requestId:{requestId}, " +
+                    "securityToken:{securityToken}");
+
+                //Cloud Governance Client Sdk need a Region url and security token
+                //to callback the Cloud Governance web api.
+                GaoApi.Init(Region.EastUS, securityToken);
+
+                var requestService = GaoApi.Create<IRequestService>();
+
+                //In Cloud Governance Client Sdk, everty request id link to one request type,
+                //In this case, the request is a ProvSite request.
+                var request = requestService.Get(new Guid(requestId)) as APIRequestProvSite;
+
+                var url = (request?.Url.ManagedPath + request?.Url.Url).TrimStart('/');
+
+                //A url repository which hold the block urls
+
+                var blockedUrLs = UrlStore.Get();
+
+                if (blockedUrLs.Contains(url.ToLower()))
                 {
-                    Trace.TraceInformation("The request url {0} is blocked", requestURL);
-                    throw new Exception("The request site collection URL is not valid");
+                    Trace.TraceInformation("The request url {0} is blocked", url);
+                    throw new WebException("The request site collection url is not valid");
                 }
-                Trace.TraceInformation("The request url {0} is valid", requestURL);
+                Trace.TraceInformation("The request url {0} is valid", url);
             }
             catch (Exception ex)
             {
-                Trace.TraceError("Some error happened while checking if site collection url is valid.{0}", ex);
+                Trace.TraceError("An error occurred while validating the " +
+                                 $"site collection url, reason {ex}");
                 throw;
             }
         }
