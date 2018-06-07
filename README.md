@@ -1,4 +1,3 @@
-
 ![Cloud Governance](https://raw.githubusercontent.com/AvePoint/cloud-governance-samples/master/cloud-governance.png) 
 
 ## What's the AvePoint Cloud Governance 
