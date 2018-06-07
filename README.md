@@ -2,10 +2,10 @@
 
 ## What's the AvePoint Cloud Governance 
 
-[AvePoint Cloud Governance](https://www.avepointonlineservices.com) is an industry leading business automation SAAS platform which focus on the automation of Microsoft Office 365 platform. Over the past few years, a lot of big enterprises in the world integrated their key business solutions with Cloud Governance platform. In order to help the entities easily go though the integration process, we lanuched the [cloud-governance-sample](https://cg.samples.github.avepoint.com) project to demostrate the coding details. 
+[AvePoint Cloud Governance](https://www.avepointonlineservices.com) is an industry leading business automation SAAS platform which focus on the automation of Microsoft Office 365 platform. Over the past few years, a lot of big enterprises in the world integrated their key business solutions with Cloud Governance platform. In order to help the entities easily go though the integration process, we lanuched the [cloud-governance-sample](https://github.com/AvePoint/cloud-governance-samples) project to demostrate the coding details. 
 
 ## Solution Details
-The sample solution shows the possible approachs to interact with [AvePoint Cloud Governance](https://www.avepointonlineservices.com/forwardto/target?product=GovernanceAutomation). Basically the demo solution show three aspects of the AvePoint Cloud Governace. 
+The sample solution shows the possible approachs to interact with [AvePoint Cloud Governance](https://www.avepointonlineservices.com/). Basically the demo solution show three aspects of the AvePoint Cloud Governace. 
 
 * **_sdk_** project shows the Cloud Governance Api(in api client short as GaoApi) demo is conformance with cloud governance web api, please refer to the [Cloud Governance Api guide](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html "Cloud Governance Api guide") for more details. sdk is a proxy of the web api and give the client side developer a clear vision of the api interface.
 * **_custom-action_** project shows a simple custom-action Asp.Net web service which should be treated as outgoing webhook, with the hook service, the end-user has the ability of plugging their customer process in the Cloud Governance workflow process.
