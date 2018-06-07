@@ -4,10 +4,12 @@
 
 [AvePoint Cloud Governance](https://www.avepointonlineservices.com) is an industry leading business automation SAAS platform which focus on the automation of Microsoft Office 365 platform. Over the past few years, a lot of big enterprises in the world integrated their key business solutions within Cloud Governance. In order to help the entities easily go though the integration process, we lanuched the [cloud-governance-sample](https://cg.samples.github.avepoint.com) project to demostrate the coding details. 
 
-## Contents
-The sample solution shows the possible approachs to interact with [AvePoint Cloud Governance](https://www.avepointonlineservices.com/forwardto/target?product=GovernanceAutomation). This is the most easy way of integrating with the AvePoint Cloud Governance.
+## Solution Details
+The sample solution shows the possible approachs to interact with [AvePoint Cloud Governance](https://www.avepointonlineservices.com/forwardto/target?product=GovernanceAutomation). Basically the demo solution show three aspects of the AvePoint Cloud Governace. 
 
-*The GaoApi demo is conformance with cloud governance web api, please refer to the [Cloud Governance Api guide](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html "Cloud Governance Api guide") for more details.
+> sdk project shows the Cloud Governance Api(in api client short as GaoApi) demo is conformance with cloud governance web api, please refer to the [Cloud Governance Api guide](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html "Cloud Governance Api guide") for more details. sdk is a proxy of the web api and give the client side developer a clear vision of the api interface.
+> custom-action project shows a simple custom-action Asp.Net web service which should be treated as outgoing webhook, with the hook service, the end-user has the ability of plugging their customer process in the Cloud Governance workflow process.
+> tool project contains some demo tools for helping end-users automate some tasks in their Office 365 environment.
 
 ## Contribute
 
@@ -37,7 +39,7 @@ Open the cloud-governance-samples directory and double click the vs solution fil
 
 * sdk project is a demo project of the [cloud-governance-sdk](https://www.nuget.org/packages/cloud.governance.sdk/), you could find this project is a xunit project and every api sample is demostrated in a unit test case.
 * tool project is a hub store location for the sample tools whick can help Cloud Governance end-users do the specific job or fix some issues.
-
+* custom-action project is a demo project for building a customized web service using Asp.Net web service, this service action will be hooked by Cloud Governance worker cluster in the running time.
 
 ## Roadmap
 
