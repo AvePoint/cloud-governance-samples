@@ -44,8 +44,8 @@ Open the cloud-governance-samples directory and double click the vs solution fil
 
 ## Usage
 
-*sdk project is a demo project of the [cloud-governance-sdk](https://www.nuget.org/packages/cloud.governance.sdk/), you could find this project is a xunit project and every api sample is demostrated in a unit test case.
-*tool project is a hub store location for the sample tools whick can help Cloud Governance end-users do the specific job or fix some issues.
+* sdk project is a demo project of the [cloud-governance-sdk](https://www.nuget.org/packages/cloud.governance.sdk/), you could find this project is a xunit project and every api sample is demostrated in a unit test case.
+* tool project is a hub store location for the sample tools whick can help Cloud Governance end-users do the specific job or fix some issues.
 
 
 
