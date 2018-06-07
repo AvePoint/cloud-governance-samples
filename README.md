@@ -1,6 +1,6 @@
 # AvePoint Cloud Governance 
 
-AvePoint Cloud Governance is industry leading business automation SAAS solution focus on Microsoft Office 365 platform. Over the past few years more and more customers integrate their key business solutions with Cloud Governance.   
+[AvePoint Cloud Governance](https://www.avepointonlineservices.com/) is an industry leading business automation SAAS solution which focus on Microsoft Office 365 platform. Over the past few years more and more customers integrate their key business solutions with Cloud Governance.   
 
 
 A sample solution shows the possible approachs of using the cloud governance client sdk to interact with AvePoint cloud governance web api. This is the most easy way of integrating with the AvePoint Cloud Governance.
