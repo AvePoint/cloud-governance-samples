@@ -21,7 +21,6 @@ There are many ways to contribute to the Project.
 ## Documentation
 
 *  [Cloud Governance Web API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html)
-*  [Company home page](https://www.avepoint.com/)
 
 ## Building
 
