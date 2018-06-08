@@ -22,6 +22,13 @@ There are many ways to contribute to the Project.
 
 *  [Cloud Governance Web API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html)
 
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+
 ## Building projects
 
 In order to use the Cloud-Governance-Sample solution, ensure that you have [visual studio 2017](https://www.visualstudio.com/) and [.NET Frameworkd 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982) installed.
