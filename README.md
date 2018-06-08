@@ -1,10 +1,10 @@
-#  ![Cloud Governance](https://raw.githubusercontent.com/AvePoint/cloud-governance-samples/master/cloud-governance.png)AvePoint Cloud Governance
+# <center>![Cloud Governance](https://raw.githubusercontent.com/AvePoint/cloud-governance-samples/master/cloud-governance.png)AvePoint Cloud Governance</cneter>
 
-## What's the AvePoint Cloud Governance 
+## About Cloud Governance 
 
 [AvePoint Cloud Governance](https://www.avepointonlineservices.com) is an industry leading business automation SAAS platform which focus on the automation of Microsoft Office 365 platform. Over the past few years, a lot of big enterprises in the world integrated their key business solutions with Cloud Governance platform. In order to help the entities easily go though the integration process, we lanuched the [cloud-governance-sample](https://github.com/AvePoint/cloud-governance-samples) project to demostrate the coding details. 
 
-## Solution Details
+## Project Details
 The sample solution shows the possible approachs to interact with [AvePoint Cloud Governance](https://www.avepointonlineservices.com/). Basically the demo solution show three aspects of the AvePoint Cloud Governace. 
 
 * **_sdk_** project shows the Cloud Governance Api(in api client short as GaoApi) demo is conformance with cloud governance web api, please refer to the [Cloud Governance Api guide](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html "Cloud Governance Api guide") for more details. sdk is a proxy of the web api and give the client side developer a clear vision of the api interface.
@@ -37,7 +37,7 @@ Open the cloud-governance-samples directory and double click the vs solution fil
 
 ## Usage
 
-* **_sdk** project is a demo project of the [cloud-governance-sdk](https://www.nuget.org/packages/cloud.governance.sdk/), you could find this project is a xunit project and every api sample is demostrated in a unit test case.
+* **_sdk_** project is a demo project of the [cloud-governance-sdk](https://www.nuget.org/packages/cloud.governance.sdk/), you could find this project is a xunit project and every api sample is demostrated in a unit test case.
 * **_tool_** project is a hub store location for the sample tools which can help Cloud Governance end-users do the specific job or fix some issues.
 * **_custom-action_** project is a demo project for building a customized web service using Asp.Net web service, this service action will be hooked by Cloud Governance worker cluster in the running time.
 
