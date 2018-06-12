@@ -40,7 +40,7 @@
                 //New method is a instance level api, that means you get a clear object each time
                 var requestService = GaoApi.New<IRequestService>(Region.EastUS, securityToken);
 
-                //In Cloud Governance Client Sdk, everty request id link to one request type,
+                //In Cloud Governance Client Sdk, every request id link to one request type,
                 //In this case, the request is a ProvSite request.
                 var request = requestService.Get(new Guid(requestId)) as APIRequestProvSite;
 
