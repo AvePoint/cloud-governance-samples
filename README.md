@@ -10,6 +10,7 @@ The sample solution shows the possible approachs to interact with [AvePoint Clou
 * **_sdk_** project shows the Cloud Governance Api(in api client short as GaoApi) demo is conformance with cloud governance web api, please refer to the [Cloud Governance Api guide](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-api/Index.html "Cloud Governance Api guide") for more details. sdk is a proxy of the web api and give the client side developer a clear vision of the api interface.
 * **_custom-action_** project shows a simple custom-action Asp.Net web service which should be treated as outgoing webhook, with the hook service, the end-user has the ability of plugging their customer process in the Cloud Governance workflow process.
 * **_tool_** project contains some demo tools for helping end-users automate some tasks in their Office 365 environment.
+* **_ps-tool_** project contains powershell tools for helping end-users automate some tasks which hard to do in cloud governance itself.
 
 ## Contribute
 
