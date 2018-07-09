@@ -1,10 +1,8 @@
 ﻿namespace Cloud.Governance.Samples.Sdk
 {
     #region using directives
-
     using System;
     using AvePoint.GA.WebAPI;
-
     #endregion using directives
 
     /// <summary>
