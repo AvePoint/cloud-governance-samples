@@ -47,7 +47,7 @@
         private APIRequestProvSite GetRequestTemplate()
         {
             //The ID of Create Site Collection service
-            var serviceId = new Guid("fbe33471-1fa5-46dc-93cb-32966660f5b8");
+            var serviceId = new Guid("33f84b08-2e5e-4a53-bf6d-6f5229453465");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestProvSite;
         }

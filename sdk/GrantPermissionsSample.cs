@@ -4,6 +4,7 @@
     using AvePoint.GA.WebAPI;
     using AvePoint.GA.WebAPI.Models;
     using System;
+    using System.Collections.Generic;
     #endregion
 
     /// <summary>
@@ -13,7 +14,7 @@
     {
         private ICommonService commonService;
         private IRequestService requestService;
-        
+
         /// <summary>
         /// Submit a request for granting permissions
         /// </summary>
@@ -47,7 +48,7 @@
         private APIRequestGRUserPermission GetRequestTemplate()
         {
             //The ID of Grant Permissions service
-            var serviceId = new Guid("");
+            var serviceId = new Guid("22f7c9bc-1c1f-44a5-8ba6-c01060d7f942");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestGRUserPermission;
         }
@@ -66,24 +67,25 @@
             //Request Summary
             requestInfo.RequestSummary = "Grant Permissions Sample";
             //URL
-            requestInfo.ScopeUrl = "";
+            requestInfo.ScopeUrl = "https://m365x398150.sharepoint.com/sites/Apple2";
             //Users
-            requestInfo.SelectUsers = "";
+            requestInfo.SelectUsers = new APIPeopleValidationInfo { Content = "debrab@m365x398150.onmicrosoft.com" };
             //Grant Type
             requestInfo.GrantPermissionFrom = APIGrantPermissionType.GrantDirectly;
             //Permanent or Temporary
             requestInfo.IsGrantTemporary = false;
             //Permission Level
-            requestInfo.SelectPermission = "Full Control";
-
-
+            requestInfo.SelectPermGroup = new APIGRFarmPermGroup
+            {
+                Levels = new List<APIGRUserPermSPLevel> { new APIGRUserPermSPLevel { Name = "Full Control" } }
+            };
 
             #endregion
 
             #region Not Required
 
             //Request Description
-            requestInfo.Description = "";
+            requestInfo.Description = "Sample";
 
             this.SetMetadataValue(requestInfo);
 
@@ -99,12 +101,12 @@
         private void SetMetadataValue(APIRequest requestInfo)
         {
             //Metadata Name
-            var metadataName = "";
+            var metadataName = "Sample";
             var metadata = requestInfo.MetadataList.Find(m => m.Name.Equals(metadataName));
             if (metadata != null)
             {
                 //Metadata Value
-                metadata.Value = "";
+                metadata.Value = "Sample";
             }
         }
 

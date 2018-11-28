@@ -47,7 +47,7 @@
         private APIRequestProvWeb GetRequestTemplate()
         {
             //The ID of Create Site service
-            var serviceId = new Guid("");
+            var serviceId = new Guid("7c962ecb-8910-4963-9782-7f8ea1a93ab6");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestProvWeb;
         }
@@ -66,15 +66,15 @@
             //Request Summary
             requestInfo.RequestSummary = "Create Site Sample";
             //Parent Site Collection or Site URL
-            requestInfo.ParentSiteUrl = "";
+            requestInfo.ParentSiteUrl = "https://m365x542077.sharepoint.com/sites/First";
             //URL
             requestInfo.Url = "Sample";
             //Title
             requestInfo.WebTitle = "Sample";
             //Primary Contact
-            requestInfo.PrimaryContact = "";
+            requestInfo.PrimaryContact = "alicel@m365x542077.onmicrosoft.com";
             //Secondary Contact
-            requestInfo.SecondaryContact = "";
+            requestInfo.SecondaryContact = "brianj@m365x542077.onmicrosoft.com";
 
             #endregion
 
@@ -99,12 +99,12 @@
         private void SetMetadataValue(APIRequest requestInfo)
         {
             //Metadata Name
-            var metadataName = "";
+            var metadataName = "Sample";
             var metadata = requestInfo.MetadataList.Find(m => m.Name.Equals(metadataName));
             if (metadata != null)
             {
                 //Metadata Value
-                metadata.Value = "";
+                metadata.Value = "Sample";
             }
         }
 

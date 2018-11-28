@@ -48,7 +48,7 @@
         private APIRequestCreateGroup GetRequestTemplate()
         {
             //The ID of Create O365 Group/Team service
-            var serviceId = new Guid("");
+            var serviceId = new Guid("f770a4cb-db5b-44b4-ad81-4f35ecab3200");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestCreateGroup;
         }
@@ -67,17 +67,15 @@
             //Request Summary
             requestInfo.RequestSummary = "Create Team Sample";
             //Name
-            requestInfo.GroupName = "Sample";
+            requestInfo.CenterGroupId = "Sample";
             //ID
-            requestInfo.GroupEmail = "";
+            requestInfo.CenterGroupName = "Sample";
             //Owners
-            requestInfo.Owners = new List<String> { "" };
-            //Members
-            requestInfo.Members = new List<String> { "" };
+            requestInfo.Owners = new List<String> { "AlexW@tenant.OnMicrosoft.com" };
             //Primary Contact
-            requestInfo.PrimaryContactUser = "";
+            requestInfo.PrimaryContactUser = "AlexW@tenant.OnMicrosoft.com";
             //Secondary Contact
-            requestInfo.SecondaryContactUser = "";
+            requestInfo.SecondaryContactUser = "BrianJ@tenant.onmicrosoft.com";
             //Enable Team
             requestInfo.EnableTeamCollaboration = true;
 
@@ -89,6 +87,8 @@
             requestInfo.Description = "Sample";
             //Group Description
             requestInfo.GroupDescription = "Sample";
+            //Members
+            requestInfo.Members = new List<String> { "CandyD@tenant.onmicrosoft.com" };
 
             this.SetMetadataValue(requestInfo);
 
@@ -104,12 +104,12 @@
         private void SetMetadataValue(APIRequest requestInfo)
         {
             //Metadata Name
-            var metadataName = "";
+            var metadataName = "Sample";
             var metadata = requestInfo.MetadataList.Find(m => m.Name.Equals(metadataName));
             if (metadata != null)
             {
                 //Metadata Value
-                metadata.Value = "";
+                metadata.Value = "Sample";
             }
         }
 
