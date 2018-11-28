@@ -3,7 +3,9 @@
     #region using directives
     using AvePoint.GA.WebAPI;
     using AvePoint.GA.WebAPI.Models;
+    using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     #endregion
 
     /// <summary>
@@ -47,7 +49,7 @@
         private APIRequestChangeSCContactAdmin GetRequestTemplate()
         {
             //The ID of Change Site Collection Contact or Administrator service
-            var serviceId = new Guid("");
+            var serviceId = new Guid("4a580529-52ec-463f-aeb6-c9aded52e181");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestChangeSCContactAdmin;
         }
@@ -66,14 +68,18 @@
             //Request Summary
             requestInfo.RequestSummary = "Change Site Collection Contact or Administrator Sample";
 
+            requestInfo.Department = "Marketing";
+
             if (requestInfo.Settings.ChangeByUser)
             {
                 #region Change Contact by User
 
                 //Original Contact or Administrator
-                requestInfo.Settings.CurrentContactOrAdmin = "";
+                requestInfo.Settings.CurrentContactOrAdmin = "alexw@tenant.onmicrosoft.com";
                 //New Contact or Administrator
-                requestInfo.Settings.NewContactOrAdmin = "";
+                requestInfo.Settings.NewContactOrAdmin = "brianj@tenant.onmicrosoft.com";
+                //Alternate new primary site collection contact/secondary site collection contact
+                requestInfo.Settings.AlternateNewContact = "candyd@tenant.onmicrosoft.com";
 
                 #endregion
             }
@@ -84,19 +90,30 @@
                 var changeContactInfo = new ChangeContactAction
                 {
                     //Site Collection URL
-                    SiteUrl = ""
+                    SiteUrl = "https://tenant.sharepoint.com/sites/Sample"
                 };
                 //Primary Administrator
                 changeContactInfo.PrimaryAdmin = new ContactAdminInfo
                 {
-                    ChangeToLoginName = ""
+                    ChangeToLoginName = "alexw@tenant.onmicrosoft.com"
+                };
+                //Additional Administrators
+                changeContactInfo.AdditionalAdmin = new ContactAdminInfo
+                {
+                    ChangeToLoginName = "candyd@tenant.onmicrosoft.com"
                 };
                 //Primary Contact
                 changeContactInfo.PrimaryContact = new ContactAdminInfo
                 {
-                    ChangeToLoginName = ""
+                    ChangeToLoginName = "brianj@tenant.onmicrosoft.com"
                 };
-
+                //Secondary Contact
+                changeContactInfo.SecondaryContact = new ContactAdminInfo
+                {
+                    ChangeToLoginName = "debrab@tenant.onmicrosoft.com"
+                };
+                var changeContactInfoList = new List<ChangeContactAction> { changeContactInfo };
+                requestInfo.Settings.ChangeContact = JsonConvert.SerializeObject(changeContactInfoList);
                 #endregion
             }
 
@@ -105,7 +122,7 @@
             #region Not Required
 
             //Request Description
-            requestInfo.Description = "";
+            requestInfo.Description = "Sample";
 
             this.SetMetadataValue(requestInfo);
 
@@ -121,12 +138,12 @@
         private void SetMetadataValue(APIRequest requestInfo)
         {
             //Metadata Name
-            var metadataName = "";
+            var metadataName = "Sample";
             var metadata = requestInfo.MetadataList.Find(m => m.Name.Equals(metadataName));
             if (metadata != null)
             {
                 //Metadata Value
-                metadata.Value = "";
+                metadata.Value = "Sample";
             }
         }
 

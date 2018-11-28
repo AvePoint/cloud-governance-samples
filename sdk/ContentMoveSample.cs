@@ -47,7 +47,7 @@
         private APIRequestContentMove GetRequestTemplate()
         {
             //The ID of Content Move service
-            var serviceId = new Guid("");
+            var serviceId = new Guid("d61f7ef5-79cc-446e-9e17-bcaf7c5b0b91");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestContentMove;
         }

@@ -47,7 +47,7 @@
         private APIRequestCreateList GetRequestTemplate()
         {
             //The ID of Create List/Library service
-            var serviceId = new Guid("");
+            var serviceId = new Guid("b280713b-7e27-4ae8-8211-6cd8816072d5");
             var serviceInfo = this.commonService.Get(serviceId);
             return serviceInfo.APIRequest as APIRequestCreateList;
         }
@@ -66,14 +66,15 @@
             //Request Summary
             requestInfo.RequestSummary = "Create List or Library Sample";
             //Parent Site URL
-            requestInfo.SiteUrl = "";
+            requestInfo.SiteUrl = "https://tenant.sharepoint.com/sites/sample";
             //List or Library
             requestInfo.IsLibrary = true;
             //URL
             requestInfo.ListUrl = "Sample";
             //Title
             requestInfo.ListTitle = "Sample";
-            
+            //Template
+            requestInfo.Template = "doclib";
             #endregion
 
             #region Not Required
@@ -97,12 +98,12 @@
         private void SetMetadataValue(APIRequest requestInfo)
         {
             //Metadata Name
-            var metadataName = "";
+            var metadataName = "Sample";
             var metadata = requestInfo.MetadataList.Find(m => m.Name.Equals(metadataName));
             if (metadata != null)
             {
                 //Metadata Value
-                metadata.Value = "";
+                metadata.Value = "Sample";
             }
         }
 

@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="cloud.governance.sdk, Version=1.0.6740.19571, Culture=neutral, PublicKeyToken=4e44c2da2bac5762, processorArchitecture=MSIL">
-      <HintPath>..\packages\cloud.governance.sdk.1.0.14\lib\net461\cloud.governance.sdk.dll</HintPath>
+    <Reference Include="cloud.governance.sdk, Version=1.0.6829.31428, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Sample\packages\cloud.governance.sdk.1.0.19\lib\net461\cloud.governance.sdk.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -62,25 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\EnumParser.cs" />
-    <Compile Include="Common\EnumValue.cs" />
-    <Compile Include="Contract\AuthenticationType.cs" />
-    <Compile Include="Contract\ChangeContact\ChangeContactAction.cs" />
-    <Compile Include="Contract\ChangeContact\ChangeContactActionSettings.cs" />
-    <Compile Include="Contract\ChangeContact\ChangeSCContactRequestInfo.cs" />
-    <Compile Include="Contract\ChangeContact\ContactAdminInfo.cs" />
-    <Compile Include="Contract\ExecutionCommandType.cs" />
-    <Compile Include="Contract\ExecutionInfo.cs" />
-    <Compile Include="Contract\ExternalUserType.cs" />
-    <Compile Include="Contract\GACustomActivityInfo.cs" />
-    <Compile Include="Contract\GAGroupInfo.cs" />
-    <Compile Include="Contract\GAPrincipalInfo.cs" />
-    <Compile Include="Contract\GARequestInfo.cs" />
-    <Compile Include="Contract\GARequestProgressStatus.cs" />
-    <Compile Include="Contract\GARequestStatus.cs" />
-    <Compile Include="Contract\GAUserInfo.cs" />
-    <Compile Include="Contract\InviteType.cs" />
-    <Compile Include="Contract\WebServiceAuthenticationType.cs" />
     <Compile Include="GroupLifecycleManagementSample.cs" />
     <Compile Include="ChangeSiteCollectionContactSample.cs" />
     <Compile Include="CreateListSample.cs" />
